@@ -1,0 +1,18 @@
+﻿<Window x:Class="Order.LogForm" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Order"
+        mc:Ignorable="d"
+        Title="Авторизация" Height="235" Width="269">
+    <Grid>
+        <TextBlock TextWrapping="Wrap" Text="Логин" Margin="14,14,0,0" HorizontalAlignment="Left" Width="200" Height="20" VerticalAlignment="Top"/>
+        <TextBox x:Name="login" TextWrapping="Wrap"  Width="200" Margin="14,44,0,0" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <TextBlock TextWrapping="Wrap" Text="Пароль" Margin="14,84,0,0" HorizontalAlignment="Left" Width="200" Height="20" VerticalAlignment="Top"/>
+        <PasswordBox x:Name="password"  Width="200" Margin="14,117,0,0" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Button Content="Войти" Margin="142,158,0,0" HorizontalAlignment="Left" Width="72" Height="29" VerticalAlignment="Top" Click="Button_Click"/>
+        <Button x:Name="registr"  Content="Зарегистрироваться" Margin="14,158,0,0" Height="29" VerticalAlignment="Top" HorizontalAlignment="Left" Width="124" BorderBrush="White" Background="White" Click="registr_Click"/>
+
+    </Grid>
+</Window>

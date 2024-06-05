@@ -1,0 +1,25 @@
+﻿<Window x:Class="Order.Registr" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Order"
+        mc:Ignorable="d"
+        Title="Регистрация" Height="329" Width="259">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="229*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock TextWrapping="Wrap" Text="E-mail" Margin="14,14,0,0" HorizontalAlignment="Left" Width="203" Height="20" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="login" TextWrapping="Wrap"  Width="203" Margin="14,39,0,0" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.ColumnSpan="2"/>
+        <TextBlock TextWrapping="Wrap" Text="Код подтверждения" Margin="14,119,0,0" HorizontalAlignment="Left" Width="203" Height="20" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <PasswordBox x:Name="AdminCode"  Width="203" Margin="14,0,0,0" Height="25" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.ColumnSpan="2"/>
+        <Button Content="Регистрация" Margin="112,256,0,0" HorizontalAlignment="Left" Width="75" Height="30" VerticalAlignment="Top" Click="Button_Click" Grid.Column="1"/>
+        <TextBlock TextWrapping="Wrap" Margin="14,187,0,0" HorizontalAlignment="Left" Width="203" Height="20" VerticalAlignment="Top" Grid.ColumnSpan="2"><Run Language="ru-ru" Text="Пароль"/></TextBlock>
+        <PasswordBox x:Name="password"  Width="203" Margin="14,212,0,0" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.ColumnSpan="2"/>
+        <Button x:Name="registr"  Content="Отмена" Margin="14,256,0,0" Height="29" VerticalAlignment="Top" HorizontalAlignment="Left" Width="68" BorderBrush="White" Background="White" Click="registr_Click" RenderTransformOrigin="0.5,1.191" Grid.ColumnSpan="2"/>
+        <Button Content="Отправить код" HorizontalAlignment="Left" Margin="84,79,0,0" VerticalAlignment="Top" Height="25" Width="103" Click="Button_Click_1" Grid.Column="1"/>
+
+    </Grid>
+</Window>

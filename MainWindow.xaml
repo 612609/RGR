@@ -1,0 +1,87 @@
+﻿<Window x:Class="Order.MainWindow" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Order"
+        mc:Ignorable="d"
+        Title="Главная" Height="349" Width="758">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Клиенты">
+                <Grid Background="#FFE5E5E5" Margin="0,0,0,3">
+                    <DataGrid x:Name="clients" AutoGenerateColumns="False" CanUserReorderColumns="False"
+                    HorizontalAlignment="Left" Width="558" IsReadOnly="True" SelectionMode="Single">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="id" MaxWidth="30" Visibility="Hidden" Binding="{Binding idClients}"/>
+                            <DataGridTextColumn Header="Имя" MinWidth="115" MaxWidth="130" Binding="{Binding Name}"/>
+                            <DataGridTextColumn Header="Фамилия" MinWidth="115" MaxWidth="130" Binding="{Binding Surname}"/>
+                            <DataGridTextColumn Header="Отчество" MinWidth="115" MaxWidth="130" Binding="{Binding Patronimic}"/>
+                            <DataGridTextColumn Header="Номер" MinWidth="115" MaxWidth="130" Binding="{Binding Number}"/>
+                            <DataGridTextColumn Header="Примечание" MinWidth="115" MaxWidth="130" Binding="{Binding Note}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button Click="AddC_Click" x:Name="AddC" Content="Добавить" Margin="609,19,43,0" VerticalAlignment="Top"
+                  Height="35"/>
+                    <Button Click="UbdateC_Click" x:Name="UbdateC" Content="Обновить" Margin="609,72,43,0"
+                  VerticalAlignment="Top" Height="35"/>
+                    <Label Content="Поиск" Margin="623,126,57,0" VerticalAlignment="Top" Height="25"/>
+                    <TextBox TextChanged="SearchC_TextChanged" x:Name="SearchC" TextWrapping="Wrap" Text="" Height="15"
+                   Margin="609,156,43,0" VerticalAlignment="Top"/>
+                    <Button Click="ChangeC_Click" x:Name="ChangeC" Content="Изменить" Margin="609,188,43,0"
+                  VerticalAlignment="Top" Height="35"/>
+                    <Button Click="DeleteC_Click" x:Name="DeleteC" Content="Удалить" Margin="609,241,43,0"
+                  VerticalAlignment="Top" Height="35"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Заказы">
+                <Grid Background="#FFE5E5E5" Margin="0,0,0,3">
+                    <DataGrid x:Name="order" AutoGenerateColumns="False" CanUserReorderColumns="False" HorizontalAlignment="Left"
+                    Width="579"  SelectionMode="Single">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="id" MaxWidth="20" Visibility="Hidden" Binding="{Binding idorders}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Название" MinWidth="105" MaxWidth="105" Binding="{Binding title}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Заказчик" MinWidth="105" MaxWidth="105" Binding="{Binding customer}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Цена" MinWidth="110" MaxWidth="110" Binding="{Binding price}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Дата заказа" MinWidth="105" MaxWidth="105"
+                                  Binding="{Binding begindata, StringFormat=dd.MM.yyyy}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Дата выдачи" MinWidth="105" MaxWidth="105"
+                                  Binding="{Binding finishdata, StringFormat=dd.MM.yyyy}" IsReadOnly="True"/>
+                            <DataGridCheckBoxColumn  Header="Статус" MinWidth="45" MaxWidth="45" Binding="{Binding readiness}" IsReadOnly="False"/>
+
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button Click="AddO_Click" x:Name="AddO" Content="Добавить" Margin="609,19,43,0" VerticalAlignment="Top"
+                  Height="35"/>
+                    <Button Click="UbdateO_Click" x:Name="UbdateO" Content="Обновить" Margin="609,72,43,0"
+                  VerticalAlignment="Top" Height="35"/>
+                    <Label Content="Поиск" Margin="623,126,57,0" VerticalAlignment="Top" Height="25"/>
+                    <TextBox TextChanged="SearchO_TextChanged" x:Name="SearchO" TextWrapping="Wrap" Text="" Height="15"
+                   Margin="609,156,43,0" VerticalAlignment="Top"/>
+                    <Button Click="ChangeO_Click" x:Name="ChangeO" Content="Изменить" Margin="609,188,43,0"
+                  VerticalAlignment="Top" Height="35"/>
+                    <Button Click="DeleteO_Click" x:Name="DeleteO" Content="Удалить" Margin="609,241,43,0"
+                  VerticalAlignment="Top" Height="35"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Материалы">
+                <Grid Background="#FFE5E5E5" Margin="0,0,0,3">
+                    <DataGrid x:Name="Materials" AutoGenerateColumns="False" CanUserReorderColumns="False"
+                    HorizontalAlignment="Left" Width="558" IsReadOnly="True" SelectionMode="Single">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="id" MaxWidth="30" Visibility="Hidden" Binding="{Binding idMaterials}"/>
+                            <DataGridTextColumn Header="Название" MinWidth="375" MaxWidth="375" Binding="{Binding MatName}"/>
+                            <DataGridTextColumn Header="Стоимость" MinWidth="170" MaxWidth="170" Binding="{Binding MatCost}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button  x:Name="AddM" Content="Добавить" Margin="609,19,43,0" VerticalAlignment="Top" Height="35" Click="AddM_Click"/>
+                    <Button x:Name="UbdateM" Content="Обновить" Margin="609,72,43,0" VerticalAlignment="Top" Height="35" Click="UbdateM_Click"/>
+                    <Label Content="Поиск" Margin="623,126,57,0" VerticalAlignment="Top" Height="25"/>
+                    <TextBox TextChanged="SearchM_TextChanged" x:Name="SearchM" TextWrapping="Wrap" Text="" Height="15" Margin="609,156,43,0" VerticalAlignment="Top"/>
+                    <Button Click="ChangeM_Click" x:Name="ChangeM" Content="Изменить" Margin="609,188,43,0" VerticalAlignment="Top" Height="35"/>
+                    <Button x:Name="DeleteM" Content="Удалить" Margin="609,241,43,0" VerticalAlignment="Top" Height="35" Click="DeleteM_Click"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
